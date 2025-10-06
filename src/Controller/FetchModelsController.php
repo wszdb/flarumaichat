@@ -54,8 +54,8 @@ class FetchModelsController implements RequestHandlerInterface
             }, $chatModels);
 
             // Store in settings as JSON
-            $this->settings->set('muhammedsaidckr-chatgpt.cached_models', json_encode($models));
-            $this->settings->set('muhammedsaidckr-chatgpt.models_last_fetched', time());
+            $this->settings->set('wszdb-flarumaichat.cached_models', json_encode($models));
+            $this->settings->set('wszdb-flarumaichat.models_last_fetched', time());
 
             return new JsonResponse([
                 'models' => $models,
