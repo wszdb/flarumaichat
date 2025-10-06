@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of muhammedsaidckr/flarum-chatgpt.
+ * This file is part of wszdb/flarumaichat.
  *
- * Copyright (c) 2023 Muhammed Said Cakir.
+ * Copyright (c) 2025 wszdb.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
