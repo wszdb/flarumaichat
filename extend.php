@@ -56,24 +56,24 @@ return [
 //        ->listen(Saving::class, SavingPost::class),
 
     (new Extend\Settings())
-        ->default('muhammedsaidckr-chatgpt.model', 'gpt-3.5-turbo-instruct')
-        ->default('muhammedsaidckr-chatgpt.enable_on_discussion_started', true)
-        ->default('muhammedsaidckr-chatgpt.max_tokens', 100)
-        ->default('muhammedsaidckr-chatgpt.user_prompt_badge_text', 'Assistant')
-        ->default('muhammedsaidckr-chatgpt.queue_active', true)
+        ->default('wszdb-flarumaichat.model', 'gpt-3.5-turbo-instruct')
+        ->default('wszdb-flarumaichat.enable_on_discussion_started', true)
+        ->default('wszdb-flarumaichat.max_tokens', 100)
+        ->default('wszdb-flarumaichat.user_prompt_badge_text', 'Assistant')
+        ->default('wszdb-flarumaichat.queue_active', true)
         // new setting for answer duration in minutes (default 5)
-        ->default('muhammedsaidckr-chatgpt.answer_duration', 0)
+        ->default('wszdb-flarumaichat.answer_duration', 0)
         // If any user replied to post, the AI will not reply to that post setting
-        ->default('muhammedsaidckr-chatgpt.reply_to_post', true)
-        ->default('muhammedsaidckr-chatgpt.role', 'You are a forum user')
-        ->default('muhammedsaidckr-chatgpt.prompt',
+        ->default('wszdb-flarumaichat.reply_to_post', true)
+        ->default('wszdb-flarumaichat.role', 'You are a forum user')
+        ->default('wszdb-flarumaichat.prompt',
             'Write a arguable or thankfully opinion asking or arguing something about an answer that has talked about "[title]" and who talked about [content]. Don\'t talk about what you would like or don\'t like. Speak in a close tone, like you are writing in a Tech Forum. Be random and unpredictable. Answer in [language].')
-        ->default('muhammedsaidckr-chatgpt.continue_to_reply', true)
-        ->default('muhammedsaidckr-chatgpt.continue_to_reply_count', 5)
-        ->default('muhammedsaidckr-chatgpt.moderation', false)
-        ->default('muhammedsaidckr-chatgpt.base_uri', 'https://api.openai.com/v1/')
-        ->default('muhammedsaidckr-chatgpt.cached_models', '[]')
-        ->default('muhammedsaidckr-chatgpt.models_last_fetched', 0)
-        ->serializeToForum('chatGptUserPromptId', 'muhammedsaidckr-chatgpt.user_prompt')
-        ->serializeToForum('chatGptBadgeText', 'muhammedsaidckr-chatgpt.user_prompt_badge_text'),
+        ->default('wszdb-flarumaichat.continue_to_reply', true)
+        ->default('wszdb-flarumaichat.continue_to_reply_count', 5)
+        ->default('wszdb-flarumaichat.moderation', false)
+        ->default('wszdb-flarumaichat.base_uri', 'https://api.openai.com/v1/')
+        ->default('wszdb-flarumaichat.cached_models', '[]')
+        ->default('wszdb-flarumaichat.models_last_fetched', 0)
+        ->serializeToForum('chatGptUserPromptId', 'wszdb-flarumaichat.user_prompt')
+        ->serializeToForum('chatGptBadgeText', 'wszdb-flarumaichat.user_prompt_badge_text'),
 ];
