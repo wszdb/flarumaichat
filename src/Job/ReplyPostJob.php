@@ -32,7 +32,7 @@ class ReplyPostJob extends AbstractJob
             ]);
 
             $settings = resolve(SettingsRepositoryInterface::class);
-            $duration = $settings->get('muhammedsaidckr-chatgpt.answer_duration');
+            $duration = $settings->get('wszdb-flarumaichat.answer_duration');
 
             // check if the discussion is greater or equal to the duration
             if ($this->post->created_at->diffInMinutes() < $duration) {
@@ -46,7 +46,7 @@ class ReplyPostJob extends AbstractJob
                 return;
             }
 
-            $continueToReply = $settings->get('muhammedsaidckr-chatgpt.continue_to_reply');
+            $continueToReply = $settings->get('wszdb-flarumaichat.continue_to_reply');
             if (!$continueToReply) {
                 $log->info('[ChatGPT Job] Skipping - continue_to_reply disabled', [
                     'post_id' => $this->post->id,
