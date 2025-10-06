@@ -36,10 +36,7 @@ class FetchModelsController implements RequestHandlerInterface
 
             // Filter for chat-compatible models (gpt-*, chatgpt-*, o1-*, etc.)
             $chatModels = array_filter($response->data, function ($model) {
-                $id = $model->id;
-                return str_starts_with($id, 'gpt-')
-                    || str_starts_with($id, 'chatgpt-')
-                    || str_starts_with($id, 'o1-');
+                return True;
             });
 
             // Sort models by created date (newest first)
