@@ -1,0 +1,48 @@
+wszdb-flarumaichat:
+  # For more details on the format
+  # Checkout https://docs.flarum.org/extend/i18n/#appendix-a-standard-key-format
+  admin:
+    settings:
+      api_key_label: API Key
+      api_key_help: Open API key üretmek için <a>openai.com</a>.
+      base_uri_label: Base URI
+      base_uri_help: OpenAI API'nin temel URI'si. Varsayılan <code>https://api.openai.com/v1</code>.
+      model_label: Model
+      model_help: "Daha fazla bilgi almak için <a>modeller</a> (varsayılan: <code>gpt-3.5-turbo-instruct</code>)."
+      max_tokens_label: En fazla kullanılabilecek jeton sayısı
+      max_tokens_help: <a>Jeton nedir ve nasıl sayılır?</a>
+      user_prompt_label: Kullanıcı istemi
+      user_prompt_help: Yanıtı oluşturmak için kullanılacak kullanıcı kimliğini girin. Varsayılan, tartışmayı kimin başlattığıdır.
+      user_prompt_badge_label: Kullanıcı İstemi Rozeti
+      user_prompt_badge_help: Kullanıcı isteminin yanında görüntülenecek metin.
+      role_label: Rol
+      role_help: Yanıtı oluşturmak için kullanılacak rolü giriniz.
+      prompt_label: İstek
+      prompt_help: Yanıtı oluşturmak için kullanılacak isteği girin. [title] değişkenini sabit bırakınız.
+      enable_on_discussion_started_label: Tartışma başlatıldığında etkinleştir
+      enable_on_discussion_started_help: Tartışma başlatıldığında, tartışmanın içeriğine dayalı bir yanıt alır.
+      answer_duration_label: Cevap Verme Süresi
+      answer_duration_help: Cevap verme süresi dakika cinsinden. Varsayılan 5 dakika.
+      enable_on_reply_label: Yanıt yoksa gönderiye yanıt ver
+      enable_on_reply_help: Yanıt yoksa gönderiye yanıt ver
+      continue_to_reply_label: Yanıt vermeye devam et
+      continue_to_reply_help: Yanıt varsa yanıt vermeye devam et
+      continue_to_reply_count_label: Yanıt vermeye devam etme sayısı
+      continue_to_reply_count_help: Botun kaç kez yanıt vermeye devam edeceği. Varsayılan 5'tir.
+      queue_active_label: Kuyruk Aktif Hale Getir
+      queue_active_help: Kuyruk aktif hale getirildiğinde, botun yanıt vermesi için kuyruğa eklenir.
+      enabled_tags_label: Aktif Etiketler
+      enabled_tags_help: Yanıt oluşturmak için kullanılacak etiketleri seçin.
+      moderation_label: Moderasyon
+      moderation_help: Eğer moderasyon etkinse, kullanıcı uygunsuz içerik içeren bir tartışma veya yanıt oluşturamaz.
+      fetch_models_label: OpenAI Modellerini Yenile
+      fetch_models_button: OpenAI'dan Son Modelleri Al
+      models_fetched_success: "OpenAI'dan {count} model başarıyla alındı"
+      fetch_models_error: Modeller alınamadı. Lütfen API anahtarınızı ve temel URI ayarlarınızı kontrol edin.
+      models_last_fetched: "Son güncelleme: {date}"
+      models_never_fetched: Modeller hiç alınmadı. En son modelleri almak için yukarıdaki düğmeye tıklayın.
+
+    permissions:
+      use_chatgpt_assistant_label: Use ChatGPT Assistant
+
+  forum:

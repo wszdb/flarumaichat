@@ -1,0 +1,54 @@
+<?php
+
+namespace Wszdb\FlarumAiChat\Listener;
+
+use Flarum\Discussion\Event\Started;
+use Flarum\Settings\SettingsRepositoryInterface;
+use Illuminate\Contracts\Queue\Queue;
+use Illuminate\Support\Arr;
+use Wszdb\FlarumAiChat\Agent;
+use Wszdb\FlarumAiChat\Job\ReplyJob;
+
+class ReplyToPost
+{
+    public function __construct(
+        protected Agent $agent,
+        protected Queue $queue
+    )
+    {
+    }
+
+    /**
+     * @param \Flarum\Discussion\Event\Started $event
+     * @return void
+     */
+    public function handle(Started $event): void
+    {
+        $settings = resolve(SettingsRepositoryInterface::class);
+        $enabled = $settings->get('muhammedsaidckr-chatgpt.queue_active');
+        $enabledTagIds = $settings->get('muhammedsaidckr-chatgpt.enabled-tags', []);
+        $actor = $event->actor;
+
+        if ($enabledTagIds = json_decode($enabledTagIds, true)) {
+            $discussion = $event->discussion;
+            $tagIds = Arr::pluck($discussion->tags, 'id');
+
+            if (!array_intersect($enabledTagIds, $tagIds)) {
+                return;
+            }
+        }
+
+        if($actor->can('discussion.useChatGPTAssistant', $discussion) === false) {
+            return;
+        }
+
+        if (!$enabled) {
+            $this->agent->repliesTo($event->discussion);
+            return;
+        }
+
+        // check queue redis, or database queue is installed
+
+        $this->queue->push(new ReplyJob($event->discussion));
+    }
+}
