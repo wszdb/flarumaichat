@@ -21,7 +21,7 @@ class ClientProvider extends AbstractServiceProvider
         /** @var \Flarum\Settings\SettingsRepositoryInterface $settings */
         $settings = $this->container->make(SettingsRepositoryInterface::class);
 
-        $apiKey = $settings->get('muhammedsaidckr-chatgpt.api_key');
+        $apiKey = $settings->get('wszdb-flarumaichat.api_key');
 
         if ($apiKey) {
             $this->container->singleton(Client::class, fn() => $this->getClient($settings));
@@ -35,7 +35,7 @@ class ClientProvider extends AbstractServiceProvider
 
     protected function getAgent(SettingsRepositoryInterface $settings, ExtensionManager $extensions): Agent
     {
-        $userId = $settings->get('muhammedsaidckr-chatgpt.user_prompt') ?? 1;
+        $userId = $settings->get('wszdb-flarumaichat.user_prompt') ?? 1;
 
         /** @var \Flarum\User\UserRepository $users */
         $users = $this->container->make(UserRepository::class);
@@ -65,8 +65,8 @@ class ClientProvider extends AbstractServiceProvider
         $agent = new Agent(
             user: $user,
             client: $client,
-            model: $settings->get('muhammedsaidckr-chatgpt.model'),
-            maxTokens: $settings->get('muhammedsaidckr-chatgpt.max_tokens'),
+            model: $settings->get('wszdb-flarumaichat.model'),
+            maxTokens: $settings->get('wszdb-flarumaichat.max_tokens'),
         );
 
         return $agent;
@@ -74,9 +74,9 @@ class ClientProvider extends AbstractServiceProvider
 
     protected function getClient(SettingsRepositoryInterface $settings)
     {
-        $apiKey = $settings->get('muhammedsaidckr-chatgpt.api_key');
+        $apiKey = $settings->get('wszdb-flarumaichat.api_key');
 
-        $baseUri = $settings->get('muhammedsaidckr-chatgpt.base_uri');
+        $baseUri = $settings->get('wszdb-flarumaichat.base_uri');
 
         return OpenAI::factory()
             ->withApiKey($apiKey)
