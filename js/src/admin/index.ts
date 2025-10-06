@@ -1,12 +1,12 @@
 import app from 'flarum/admin/app';
 import ChatGptSettings from './components/ChatGptSettings';
 
-app.initializers.add('muhammedsaidckr-chatgpt', () => {
+app.initializers.add('wszdb-flarumaichat', () => {
   app.extensionData
-    .for('muhammedsaidckr-chatgpt')
+    .for('wszdb-flarumaichat')
     .registerPermission(
       {
-        label: app.translator.trans('muhammedsaidckr-chatgpt.admin.permissions.use_chatgpt_assistant_label'),
+        label: app.translator.trans('wszdb-flarumaichat.admin.permissions.use_chatgpt_assistant_label'),
         icon: 'fas fa-comment',
         permission: 'discussion.useChatGPTAssistant',
         allowGuest: false,
