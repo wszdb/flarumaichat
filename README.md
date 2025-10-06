@@ -1,6 +1,5 @@
 # FlarumAiChat
 
-该项目基于[Flarum-ChatGPT](https://github.com/muhammedsaidckr/flarum-chatgpt)二次开发，在原有仅支持ChatGPT模型基础上进行了扩展。
 AI-powered chat extension for Flarum, integrating advanced AI conversation capabilities.
 Flarum的AI自动回复插件，用户发贴/回贴时自动AI进行回复，支持所有OpenAi协议的大模型平台，包括DeepSeek、通义千问、硅基流动、ChatGpt、Gemini、Grok等。
 
