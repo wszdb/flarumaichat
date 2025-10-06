@@ -121,7 +121,7 @@ class Agent
             $messages = $this->createMessages($title, $content, $role, $prompt);
 
             $settings = resolve(SettingsRepositoryInterface::class);
-            $userPromptId = $settings->get('muhammedsaidckr-chatgpt.user_prompt');
+            $userPromptId = $settings->get('wszdb-flarumaichat.user_prompt');
 
             // get the posts where the number is greater than 1 to the last message not include last message
             $posts = $discussion->posts()
@@ -192,13 +192,13 @@ class Agent
         // get settings from the database
         $settings = resolve(SettingsRepositoryInterface::class);
         // get role
-        $role = $settings->get('muhammedsaidckr-chatgpt.role');
+        $role = $settings->get('wszdb-flarumaichat.role');
         if (empty($role)) {
             // if the role is empty, set the role to default
             $role = 'You are a helpful assistant.';
         }
         // get the prompt from the settings
-        $prompt = $settings->get('muhammedsaidckr-chatgpt.prompt');
+        $prompt = $settings->get('wszdb-flarumaichat.prompt');
         if (empty($prompt)) {
             // if the prompt is empty, set the prompt to default
             $prompt = 'Write a arguable or thankfully opinion asking or arguing something about an answer that has talked about "[title]" and who talked about [content]. Don\'t talk about what you would like or don\'t like. Speak in a close tone, like you are writing in a Tech Forum. Be random and unpredictable. Answer in [language].';
@@ -409,7 +409,7 @@ class Agent
 
         $settings = resolve(SettingsRepositoryInterface::class);
 
-        $userPromptId = $settings->get('muhammedsaidckr-chatgpt.user_prompt');
+        $userPromptId = $settings->get('wszdb-flarumaichat.user_prompt');
         if ($commentPost->user_id == $userPromptId) {
             return false;
         }
@@ -420,7 +420,7 @@ class Agent
         }
 
 
-        $maxReplyCount = $settings->get('muhammedsaidckr-chatgpt.continue_to_reply_count');
+        $maxReplyCount = $settings->get('wszdb-flarumaichat.continue_to_reply_count');
         $assistantReplyCount = $discussion->posts()->where('type', 'comment')->where('user_id', $userPromptId)->count();
 
         if ($assistantReplyCount >= $maxReplyCount) {
