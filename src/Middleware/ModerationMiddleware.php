@@ -25,7 +25,7 @@ class ModerationMiddleware implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         // check moderation enabled in settings
-        $isModerationEnabled = resolve(SettingsRepositoryInterface::class)->get('muhammedsaidckr-chatgpt.moderation');
+        $isModerationEnabled = resolve(SettingsRepositoryInterface::class)->get('wszdb-flarumaichat.moderation');
 
         if (!$isModerationEnabled) {
             return $handler->handle($request);
