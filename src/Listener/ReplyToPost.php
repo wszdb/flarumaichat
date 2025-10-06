@@ -25,8 +25,8 @@ class ReplyToPost
     public function handle(Started $event): void
     {
         $settings = resolve(SettingsRepositoryInterface::class);
-        $enabled = $settings->get('muhammedsaidckr-chatgpt.queue_active');
-        $enabledTagIds = $settings->get('muhammedsaidckr-chatgpt.enabled-tags', []);
+        $enabled = $settings->get('wszdb-flarumaichat.queue_active');
+        $enabledTagIds = $settings->get('wszdb-flarumaichat.enabled-tags', []);
         $actor = $event->actor;
 
         if ($enabledTagIds = json_decode($enabledTagIds, true)) {
