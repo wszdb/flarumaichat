@@ -1,6 +1,6 @@
 # FlarumAiChat
 
-AI-powered chat extension for Flarum, integrating advanced AI conversation capabilities.
+An AI auto-reply plugin for Flarum that automatically generates AI responses when users post or reply. It supports all major OpenAI API-compatible large model platforms, including Alibaba Bailian, Volcano Ark, Baidu Qianfan, Tencent, OpenRouter, and SiliconFlow. The plugin covers a wide range of large models such as DeepSeek, Qwen3, Kimi, GLM, ChatGPT, Gemini, and Grok.
 
 Flarum的AI自动回复插件，用户发贴/回贴时自动AI进行回复，支持所有OpenAi API的大模型平台，包括阿里百炼、火山方舟、百度千帆、腾讯、Openrouter、硅基流动等，覆盖各类大模型，如DeepSeek、Qwen3、Kimi、GLM、ChatGPT、Gemini、Grok等，。
 
